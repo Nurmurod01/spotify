@@ -51,7 +51,7 @@ const App = () => {
     "3YQKmKGau1PzlVlkL1iodx",
   ];
 
-  const token = import.meta.env.VITE_TOKEN;
+  const token = import.meta.env.VITE_TOKEN || process.env.VITE_TOKEN;
   const { data } = useFetch(
     `https://api.spotify.com/v1/artists?ids=${artists.join(",")}`,
     { Authorization: `Bearer ${token}` }
